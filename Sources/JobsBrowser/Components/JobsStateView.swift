@@ -13,24 +13,24 @@ struct JobsStateView: View {
     var body: some View {
         switch state {
         case .loading:
-            ProgressView("Loading jobs")
+            ProgressView(AppConstants.Text.loadingJobs)
                 .progressViewStyle(.circular)
                 .tint(.white)
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .accessibilityIdentifier("jobs-loading-state")
+                .accessibilityIdentifier(AppConstants.Accessibility.jobsLoadingState)
         case .empty(let message):
             JobsEmptyStateView(
-                systemImage: "briefcase",
-                title: "No Results",
+                systemImage: AppConstants.Icons.briefcase,
+                title: AppConstants.Text.noResults,
                 message: message
             )
         case .error(let message):
             JobsEmptyStateView(
-                systemImage: "exclamationmark.triangle",
-                title: "Something Went Wrong",
+                systemImage: AppConstants.Icons.warning,
+                title: AppConstants.Text.somethingWentWrong,
                 message: message,
-                actionTitle: "Try Again",
+                actionTitle: AppConstants.Text.tryAgain,
                 action: retryAction
             )
         }
@@ -47,7 +47,7 @@ private struct JobsEmptyStateView: View {
     var body: some View {
         VStack(spacing: 16) {
             Image(systemName: systemImage)
-                .font(.system(size: 38, weight: .semibold))
+                .font(.system(size: AppConstants.Layout.loadingIconSize, weight: .semibold))
                 .foregroundStyle(.white.opacity(0.9))
                 .padding()
                 .background(.white.opacity(0.12), in: Circle())
@@ -60,7 +60,7 @@ private struct JobsEmptyStateView: View {
                 .font(.body)
                 .foregroundStyle(.white.opacity(0.75))
                 .multilineTextAlignment(.center)
-                .padding(.horizontal, 24)
+                .padding(.horizontal, AppConstants.Layout.loadingTextHorizontalPadding)
 
             if let actionTitle, let action {
                 Button(actionTitle, action: action)
@@ -71,6 +71,6 @@ private struct JobsEmptyStateView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding()
-        .accessibilityIdentifier("jobs-empty-state")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobsEmptyState)
     }
 }

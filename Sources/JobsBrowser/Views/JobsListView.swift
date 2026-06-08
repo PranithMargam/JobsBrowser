@@ -9,22 +9,21 @@ struct JobsListView: View {
         NavigationStack {
             ZStack {
                 background
-
                 content
-                    .accessibilityIdentifier("jobs-content")
-                    .navigationTitle("Jobs")
+                    .navigationTitle(AppConstants.Text.jobsNavigationTitle)
                     .navigationBarTitleDisplayMode(.large)
-                    .searchable(text: $viewModel.searchQuery, prompt: "Title or company")
-                    .task {
-                        if case .idle = viewModel.state {
-                            await viewModel.loadJobs()
-                        }
-                    }
+                    .searchable(text: $viewModel.searchQuery, prompt: AppConstants.Text.searchPrompt)
                     .sheet(item: $selectedJob) { job in
                         NavigationStack {
                             JobDetailView(job: job, activityStore: activityStore)
                         }
                     }
+            }
+            .accessibilityIdentifier(AppConstants.Accessibility.jobsContent)
+            .task {
+                if case .idle = viewModel.state {
+                    await viewModel.loadJobs()
+                }
             }
         }
     }
@@ -61,41 +60,35 @@ struct JobsListView: View {
 
             Circle()
                 .fill(Color(red: 0.40, green: 0.58, blue: 0.98).opacity(0.18))
-                .frame(width: 260, height: 260)
-                .blur(radius: 70)
+                .frame(width: AppConstants.Layout.heroCircleLarge, height: AppConstants.Layout.heroCircleLarge)
+                .blur(radius: AppConstants.Layout.heroCircleBlur)
                 .offset(x: 140, y: -220)
 
             Circle()
                 .fill(Color(red: 0.97, green: 0.67, blue: 0.35).opacity(0.14))
-                .frame(width: 220, height: 220)
-                .blur(radius: 70)
+                .frame(width: AppConstants.Layout.heroCircleSmall, height: AppConstants.Layout.heroCircleSmall)
+                .blur(radius: AppConstants.Layout.heroCircleBlur)
                 .offset(x: -120, y: 260)
         }
         .ignoresSafeArea()
     }
 
     private func jobsContent(_ sections: [JobsListViewModel.Section]) -> some View {
-        let personalizedSections = sections.map { section in
-            JobsListViewModel.Section(
-                category: section.category,
-                jobs: rankedJobs(section.jobs)
-            )
-        }
-        let featuredJob = personalizedSections
+        let featuredJob = sections
             .flatMap { $0.jobs }
             .max(by: { personalizationScore(for: $0) < personalizationScore(for: $1) })
 
         return ScrollView {
             LazyVStack(alignment: .leading, spacing: 22) {
                 JobsHeroCard(
-                    totalJobs: personalizedSections.reduce(0) { $0 + $1.jobs.count },
-                    sectionCount: personalizedSections.count,
+                    totalJobs: sections.reduce(0) { $0 + $1.jobs.count },
+                    sectionCount: sections.count,
                     savedCount: activityStore.savedJobs.count,
                     recentCount: activityStore.recentJobs.count,
                     featuredJob: featuredJob
                 )
 
-                ForEach(personalizedSections) { section in
+                ForEach(sections) { section in
                     VStack(alignment: .leading, spacing: 14) {
                         JobsSectionHeader(title: section.title)
 
@@ -107,30 +100,25 @@ struct JobsListView: View {
                                     onToggleSave: { activityStore.toggleSaved(job) }
                                 )
                                     .onTapGesture {
-                                        activityStore.recordViewed(job)
                                         selectedJob = job
                                     }
-                                .accessibilityIdentifier("jobs-list-card-\(job.id)")
+                                .accessibilityIdentifier(AppConstants.Accessibility.jobsListCard(id: job.id))
                             }
                         }
-                        .padding(14)
-                        .background(.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+                        .padding(AppConstants.Layout.sectionCardPadding)
+                        .background(.white.opacity(0.05), in: RoundedRectangle(cornerRadius: AppConstants.Layout.sectionCardCornerRadius, style: .continuous))
                         .overlay(
-                            RoundedRectangle(cornerRadius: 24, style: .continuous)
+                            RoundedRectangle(cornerRadius: AppConstants.Layout.sectionCardCornerRadius, style: .continuous)
                                 .stroke(.white.opacity(0.08), lineWidth: 1)
                         )
                     }
                 }
             }
-            .padding(.horizontal)
-            .padding(.top, 10)
-            .padding(.bottom, 28)
-            .accessibilityIdentifier("jobs-list")
+            .padding(.horizontal, AppConstants.Layout.jobsListHorizontalPadding)
+            .padding(.top, AppConstants.Layout.jobsListTopPadding)
+            .padding(.bottom, AppConstants.Layout.jobsListBottomPadding)
         }
-    }
-
-    private func rankedJobs(_ jobs: [Job]) -> [Job] {
-        jobs.sorted { personalizationScore(for: $0) > personalizationScore(for: $1) }
+        .accessibilityIdentifier(AppConstants.Accessibility.jobsList)
     }
 
     private func personalizationScore(for job: Job) -> Int {
@@ -172,8 +160,8 @@ private struct JobsSectionHeader: View {
         Text(title)
             .font(.headline.weight(.semibold))
             .foregroundStyle(.white)
-            .padding(.horizontal, 4)
-            .accessibilityIdentifier("jobs-section-\(title.lowercased().replacingOccurrences(of: " ", with: "-"))")
+            .padding(.horizontal, AppConstants.Layout.footerPadding)
+            .accessibilityIdentifier(AppConstants.Accessibility.jobsSection(title))
     }
 }
 
@@ -188,12 +176,12 @@ private struct JobsHeroCard: View {
         VStack(alignment: .leading, spacing: 18) {
             HStack(alignment: .top, spacing: 14) {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text("Find your next iOS role")
+                    Text(AppConstants.Text.jobsHeroTitle)
                         .font(.largeTitle.weight(.bold))
                         .foregroundStyle(.white)
                         .lineSpacing(1.5)
 
-                    Text("Curated roles tailored to your profile, recent activity, and fresh opportunities worth exploring.")
+                    Text(AppConstants.Text.jobsHeroSubtitle)
                         .font(.body)
                         .foregroundStyle(.white.opacity(0.78))
                         .fixedSize(horizontal: false, vertical: true)
@@ -201,22 +189,22 @@ private struct JobsHeroCard: View {
 
                 Spacer(minLength: 0)
 
-                Image(systemName: "briefcase.fill")
-                    .font(.system(size: 28, weight: .semibold))
+                Image(systemName: AppConstants.Icons.briefcaseFilled)
+                    .font(.system(size: AppConstants.Layout.heroIconSize, weight: .semibold))
                     .foregroundStyle(.white)
-                    .padding(16)
+                    .padding(AppConstants.Layout.heroIconPadding)
                     .background(Color.white.opacity(0.12), in: Circle())
             }
 
             HStack(spacing: 10) {
-                HeroStatPill(value: "\(totalJobs)", label: "Open roles")
-                HeroStatPill(value: "\(sectionCount)", label: "Collections")
-                HeroStatPill(value: "\(savedCount + recentCount)", label: "Personalized")
+                HeroStatPill(value: "\(totalJobs)", label: AppConstants.Text.openRoles)
+                HeroStatPill(value: "\(sectionCount)", label: AppConstants.Text.collections)
+                HeroStatPill(value: "\(savedCount + recentCount)", label: AppConstants.Text.personalized)
             }
 
             if let featuredJob {
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(recentCount > 0 ? "Featured from your activity" : "Featured for you")
+                    Text(recentCount > 0 ? AppConstants.Text.featuredFromYourActivity : AppConstants.Text.featuredForYou)
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(.white.opacity(0.72))
                         .textCase(.uppercase)
@@ -226,27 +214,27 @@ private struct JobsHeroCard: View {
                         .foregroundStyle(.white)
 
                     HStack(spacing: 14) {
-                        Label(featuredJob.companyName, systemImage: "building.2")
-                        Label(featuredJob.location, systemImage: "mappin.and.ellipse")
+                        Label(featuredJob.companyName, systemImage: AppConstants.Icons.company)
+                        Label(featuredJob.location, systemImage: AppConstants.Icons.location)
                     }
                     .font(.footnote.weight(.medium))
                     .foregroundStyle(.white.opacity(0.82))
                     .lineLimit(1)
                     .minimumScaleFactor(0.85)
                 }
-                .padding(16)
+                .padding(AppConstants.Layout.featuredCardCornerRadius - 2)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.white.opacity(0.08), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                .background(.white.opacity(0.08), in: RoundedRectangle(cornerRadius: AppConstants.Layout.featuredCardCornerRadius, style: .continuous))
             }
 
             if savedCount > 0 || recentCount > 0 {
                 HStack(spacing: 10) {
-                    PersonalizationChip(title: "Saved", value: "\(savedCount)")
-                    PersonalizationChip(title: "Recently viewed", value: "\(recentCount)")
+                    PersonalizationChip(title: AppConstants.Text.saved, value: "\(savedCount)")
+                    PersonalizationChip(title: AppConstants.Text.recentlyViewed, value: "\(recentCount)")
                 }
             }
         }
-        .padding(22)
+        .padding(AppConstants.Layout.heroCardPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             LinearGradient(
@@ -257,14 +245,14 @@ private struct JobsHeroCard: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             ),
-            in: RoundedRectangle(cornerRadius: 30, style: .continuous)
+            in: RoundedRectangle(cornerRadius: AppConstants.Layout.heroCardCornerRadius, style: .continuous)
         )
         .overlay(
-            RoundedRectangle(cornerRadius: 30, style: .continuous)
+            RoundedRectangle(cornerRadius: AppConstants.Layout.heroCardCornerRadius, style: .continuous)
                 .stroke(.white.opacity(0.14), lineWidth: 1)
         )
         .shadow(color: .black.opacity(0.28), radius: 30, x: 0, y: 18)
-        .accessibilityIdentifier("jobs-hero-card")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobsHeroCard)
     }
 }
 
@@ -281,10 +269,10 @@ private struct PersonalizationChip: View {
                 .font(.caption.weight(.medium))
                 .foregroundStyle(.white.opacity(0.72))
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 12)
+        .padding(.vertical, AppConstants.Layout.chipVerticalPadding)
+        .padding(.horizontal, AppConstants.Layout.chipHorizontalPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.white.opacity(0.09), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(.white.opacity(0.09), in: RoundedRectangle(cornerRadius: AppConstants.Layout.chipCornerRadius, style: .continuous))
     }
 }
 
@@ -301,9 +289,9 @@ private struct HeroStatPill: View {
                 .font(.caption.weight(.medium))
                 .foregroundStyle(.white.opacity(0.75))
         }
-        .padding(.vertical, 12)
-        .padding(.horizontal, 14)
+        .padding(.vertical, AppConstants.Layout.heroStatVerticalPadding)
+        .padding(.horizontal, AppConstants.Layout.heroStatHorizontalPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.white.opacity(0.10), in: RoundedRectangle(cornerRadius: 16, style: .continuous))
+        .background(.white.opacity(0.10), in: RoundedRectangle(cornerRadius: AppConstants.Layout.heroStatCornerRadius, style: .continuous))
     }
 }

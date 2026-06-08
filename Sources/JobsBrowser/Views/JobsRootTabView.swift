@@ -13,33 +13,33 @@ struct JobsRootTabView: View {
         TabView {
             JobsListView(viewModel: homeViewModel, activityStore: activityStore)
             .tabItem {
-                Label("Home", systemImage: "house.fill")
+                Label(AppConstants.Text.homeTab, systemImage: AppConstants.Icons.home)
             }
-            .accessibilityIdentifier("tab-home")
+            .accessibilityIdentifier(AppConstants.Accessibility.tabHome)
 
             NavigationStack {
                 MyJobsView(activityStore: activityStore)
             }
             .tabItem {
-                Label("My Jobs", systemImage: "bookmark.fill")
+                Label(AppConstants.Text.myJobsTab, systemImage: AppConstants.Icons.bookmarkFilled)
             }
-            .accessibilityIdentifier("tab-my-jobs")
+            .accessibilityIdentifier(AppConstants.Accessibility.tabMyJobs)
 
             NavigationStack {
                 MessagesView()
             }
             .tabItem {
-                Label("Messages", systemImage: "message.fill")
+                Label(AppConstants.Text.messagesTab, systemImage: AppConstants.Icons.messages)
             }
-            .accessibilityIdentifier("tab-messages")
+            .accessibilityIdentifier(AppConstants.Accessibility.tabMessages)
 
             NavigationStack {
                 ProfileView()
             }
             .tabItem {
-                Label("Profile", systemImage: "person.crop.circle.fill")
+                Label(AppConstants.Text.profileTab, systemImage: AppConstants.Icons.profile)
             }
-            .accessibilityIdentifier("tab-profile")
+            .accessibilityIdentifier(AppConstants.Accessibility.tabProfile)
         }
     }
 }
@@ -55,24 +55,24 @@ private struct MyJobsView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     TabScreenHero(
-                        title: "My Jobs",
-                        subtitle: "Track the roles you’ve saved and recently explored."
+                        title: AppConstants.Text.myJobsTab,
+                        subtitle: AppConstants.Text.myJobsHeroSubtitle
                     )
 
                     TabCard(
-                        title: "Saved roles",
+                        title: AppConstants.Text.savedRoles,
                         value: "\(activityStore.savedJobs.count)",
-                        subtitle: "Save interesting jobs to revisit later."
+                        subtitle: AppConstants.Text.myJobsSavedSubtitle
                     )
 
                     if activityStore.savedJobs.isEmpty {
                         EmptyJobsPocket(
-                            title: "No saved jobs yet",
-                            subtitle: "Tap the bookmark on any job card to save it here."
+                            title: AppConstants.Text.noSavedJobsYet,
+                            subtitle: AppConstants.Text.savedJobsHint
                         )
                     } else {
                         VStack(alignment: .leading, spacing: 14) {
-                            SectionHeader(title: "Saved jobs")
+                            SectionHeader(title: AppConstants.Text.savedRoles)
 
                             LazyVStack(spacing: 14) {
                                 ForEach(activityStore.savedJobs) { job in
@@ -82,7 +82,6 @@ private struct MyJobsView: View {
                                         onToggleSave: { activityStore.toggleSaved(job) }
                                     )
                                     .onTapGesture {
-                                        activityStore.recordViewed(job)
                                         selectedJob = job
                                     }
                                 }
@@ -91,12 +90,12 @@ private struct MyJobsView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 14) {
-                        SectionHeader(title: "Recently viewed")
+                        SectionHeader(title: AppConstants.Text.recentlyViewed)
 
                         if activityStore.recentJobs.isEmpty {
                             EmptyJobsPocket(
-                                title: "No recent activity",
-                                subtitle: "Open a job to see it appear here."
+                                title: AppConstants.Text.noRecentActivity,
+                                subtitle: AppConstants.Text.recentActivityHint
                             )
                         } else {
                             LazyVStack(spacing: 14) {
@@ -107,7 +106,6 @@ private struct MyJobsView: View {
                                         onToggleSave: { activityStore.toggleSaved(job) }
                                     )
                                     .onTapGesture {
-                                        activityStore.recordViewed(job)
                                         selectedJob = job
                                     }
                                 }
@@ -118,7 +116,7 @@ private struct MyJobsView: View {
                 .padding()
             }
         }
-        .navigationTitle("My Jobs")
+        .navigationTitle(AppConstants.Text.myJobsNavigationTitle)
         .navigationBarTitleDisplayMode(.large)
         .sheet(item: $selectedJob) { job in
             NavigationStack {
@@ -136,20 +134,20 @@ private struct MessagesView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     TabScreenHero(
-                        title: "Messages",
-                        subtitle: "Stay in sync with recruiters and hiring teams in one place."
+                        title: AppConstants.Text.messagesHeroTitle,
+                        subtitle: AppConstants.Text.messagesHeroSubtitle
                     )
 
                     TabCard(
-                        title: "Inbox",
-                        value: "No unread messages",
-                        subtitle: "New recruiter messages will appear here."
+                        title: AppConstants.Text.inbox,
+                        value: AppConstants.Text.noUnreadMessages,
+                        subtitle: AppConstants.Text.inboxHint
                     )
                 }
                 .padding()
             }
         }
-        .navigationTitle("Messages")
+        .navigationTitle(AppConstants.Text.messagesNavigationTitle)
         .navigationBarTitleDisplayMode(.large)
     }
 }
@@ -162,26 +160,26 @@ private struct ProfileView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
                     TabScreenHero(
-                        title: "Profile",
-                        subtitle: "Review your professional snapshot and keep your preferences up to date."
+                        title: AppConstants.Text.profileHeroTitle,
+                        subtitle: AppConstants.Text.profileHeroSubtitle
                     )
 
                     TabCard(
-                        title: "Your profile",
-                        value: "iOS Engineer",
-                        subtitle: "Swift, SwiftUI, MVVM, async/await"
+                        title: AppConstants.Text.yourProfile,
+                        value: AppConstants.Text.profileValue,
+                        subtitle: AppConstants.Text.profileSubtitle
                     )
 
                     TabCard(
-                        title: "Job preferences",
-                        value: "Remote friendly",
-                        subtitle: "Location, role type, and salary preferences live here."
+                        title: AppConstants.Text.jobPreferences,
+                        value: AppConstants.Text.remoteFriendly,
+                        subtitle: AppConstants.Text.jobPreferencesSubtitle
                     )
                 }
                 .padding()
             }
         }
-        .navigationTitle("Profile")
+        .navigationTitle(AppConstants.Text.profileNavigationTitle)
         .navigationBarTitleDisplayMode(.large)
     }
 }

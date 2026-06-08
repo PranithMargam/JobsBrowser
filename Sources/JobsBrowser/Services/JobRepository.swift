@@ -11,9 +11,9 @@ enum JobRepositoryError: LocalizedError, Equatable {
     var errorDescription: String? {
         switch self {
         case .resourceNotFound:
-            return "We couldn't find the jobs data file."
+            return AppConstants.Text.jobsDataFileMissing
         case .decodingFailed:
-            return "The jobs data could not be read."
+            return AppConstants.Text.jobsDataUnreadable
         }
     }
 }

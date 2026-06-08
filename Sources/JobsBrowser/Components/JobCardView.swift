@@ -19,18 +19,14 @@ struct JobCardView: View {
                             .foregroundStyle(.white.opacity(0.78))
                     }
 
-                    Spacer(minLength: 12)
+                    Spacer(minLength: AppConstants.Layout.footerPadding * 3)
 
-                    Image(systemName: "chevron.right")
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.white.opacity(0.45))
-                        .padding(.top, 4)
                 }
 
                 HStack(spacing: 8) {
-                    Label(job.location, systemImage: "mappin.and.ellipse")
+                    Label(job.location, systemImage: AppConstants.Icons.location)
                     Spacer(minLength: 8)
-                    Label(job.salaryRange, systemImage: "banknote")
+                    Label(job.salaryRange, systemImage: AppConstants.Icons.salary)
                 }
                 .font(.footnote.weight(.medium))
                 .foregroundStyle(.white.opacity(0.8))
@@ -40,37 +36,37 @@ struct JobCardView: View {
                 HStack(spacing: 8) {
                     JobPill(text: job.category.title)
                     if isSaved {
-                        JobPill(text: "Saved")
+                        JobPill(text: AppConstants.Text.saved)
                     }
                 }
                 .padding(.top, 2)
             }
-            .padding(18)
+            .padding(AppConstants.Layout.jobCardPadding)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 22, style: .continuous))
+            .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: AppConstants.Layout.jobCardCornerRadius, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 22, style: .continuous)
+                RoundedRectangle(cornerRadius: AppConstants.Layout.jobCardCornerRadius, style: .continuous)
                     .stroke(.white.opacity(0.12), lineWidth: 1)
             )
             .shadow(color: .black.opacity(0.22), radius: 18, x: 0, y: 10)
 
             if let onToggleSave {
                 Button(action: onToggleSave) {
-                    Image(systemName: isSaved ? "bookmark.fill" : "bookmark")
-                        .font(.system(size: 15, weight: .semibold))
+                    Image(systemName: isSaved ? AppConstants.Icons.bookmarkFilled : AppConstants.Icons.bookmark)
+                        .font(.system(size: AppConstants.Layout.saveButtonIconSize, weight: .semibold))
                         .foregroundStyle(isSaved ? .black : .white)
                         .padding(10)
                         .background(isSaved ? Color.white : Color.white.opacity(0.12), in: Circle())
                 }
                 .buttonStyle(.plain)
-                .accessibilityLabel(isSaved ? "Remove from saved jobs" : "Save job")
-                .accessibilityIdentifier("job-save-button-\(job.id)")
-                .padding(14)
+                .accessibilityLabel(isSaved ? AppConstants.Text.removeFromSavedJobs : AppConstants.Text.saveJob)
+                .accessibilityIdentifier(AppConstants.Accessibility.jobSaveButton(id: job.id))
+                .padding(AppConstants.Layout.cardSpacing)
             }
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel("\(job.title), \(job.companyName), \(job.location), \(job.salaryRange)")
-        .accessibilityIdentifier("job-card-\(job.id)")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobCard(id: job.id))
     }
 }
 
@@ -81,8 +77,8 @@ private struct JobPill: View {
         Text(text)
             .font(.caption.weight(.semibold))
             .foregroundStyle(.white.opacity(0.9))
-            .padding(.horizontal, 10)
-            .padding(.vertical, 5)
+            .padding(.horizontal, AppConstants.Layout.chipHorizontalPadding)
+            .padding(.vertical, AppConstants.Layout.chipVerticalPadding)
             .background(.white.opacity(0.10), in: Capsule())
     }
 }

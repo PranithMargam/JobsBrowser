@@ -9,11 +9,11 @@ struct Job: Identifiable, Codable, Hashable {
         var title: String {
             switch self {
             case .profile:
-                return "Jobs based on your Profile"
+                return AppConstants.Text.jobsBasedOnYourProfile
             case .recent:
-                return "Jobs based on your recent activity"
+                return AppConstants.Text.jobsBasedOnYourRecentActivity
             case .explore:
-                return "Explore more jobs"
+                return AppConstants.Text.exploreMoreJobs
             }
         }
     }

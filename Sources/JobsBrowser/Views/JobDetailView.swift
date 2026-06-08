@@ -3,13 +3,14 @@ import SwiftUI
 struct JobDetailView: View {
     let job: Job
     @ObservedObject var activityStore: JobsActivityStore
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 JobDetailHeroCard(job: job)
-                JobDetailSection(title: "Job Description", text: job.description)
-                JobDetailSection(title: "Company Information", text: job.companyInformation)
+                JobDetailSection(title: AppConstants.Text.jobDescription, text: job.description)
+                JobDetailSection(title: AppConstants.Text.companyInformation, text: job.companyInformation)
                 JobHighlightsCard(job: job)
             }
             .padding()
@@ -18,19 +19,26 @@ struct JobDetailView: View {
         .navigationTitle(job.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(AppConstants.Text.close) {
+                    dismiss()
+                }
+                .accessibilityIdentifier(AppConstants.Accessibility.jobDetailCloseButton)
+            }
+
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: { activityStore.toggleSaved(job) }) {
-                    Image(systemName: activityStore.isSaved(job) ? "bookmark.fill" : "bookmark")
-                        .font(.system(size: 16, weight: .semibold))
+                    Image(systemName: activityStore.isSaved(job) ? AppConstants.Icons.bookmarkFilled : AppConstants.Icons.bookmark)
+                        .font(.system(size: AppConstants.Layout.detailSaveButtonIconSize, weight: .semibold))
                 }
-                .accessibilityLabel(activityStore.isSaved(job) ? "Remove from saved jobs" : "Save job")
-                .accessibilityIdentifier("job-detail-save-button")
+                .accessibilityLabel(activityStore.isSaved(job) ? AppConstants.Text.removeFromSavedJobs : AppConstants.Text.saveJob)
+                .accessibilityIdentifier(AppConstants.Accessibility.jobDetailSaveButton)
             }
         }
         .onAppear {
             activityStore.recordViewed(job)
         }
-        .accessibilityIdentifier("job-detail-screen")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobDetailScreen)
     }
 
     private var detailBackground: some View {
@@ -58,17 +66,17 @@ private struct JobDetailHeroCard: View {
 
             Divider().opacity(0.3)
 
-            Label(job.salaryRange, systemImage: "banknote")
+            Label(job.salaryRange, systemImage: AppConstants.Icons.salary)
                 .font(.headline)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(20)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .padding(AppConstants.Layout.detailCardPadding)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppConstants.Layout.detailCardCornerRadius, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
+            RoundedRectangle(cornerRadius: AppConstants.Layout.detailCardCornerRadius, style: .continuous)
                 .stroke(.secondary.opacity(0.15), lineWidth: 1)
         )
-        .accessibilityIdentifier("job-detail-hero")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobDetailHero)
     }
 }
 
@@ -86,13 +94,13 @@ private struct JobDetailSection: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(20)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .padding(AppConstants.Layout.detailCardPadding)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppConstants.Layout.detailCardCornerRadius, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
+            RoundedRectangle(cornerRadius: AppConstants.Layout.detailCardCornerRadius, style: .continuous)
                 .stroke(.secondary.opacity(0.15), lineWidth: 1)
         )
-        .accessibilityIdentifier("job-detail-section-\(title.lowercased().replacingOccurrences(of: " ", with: "-"))")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobDetailSection(title))
     }
 }
 
@@ -101,22 +109,22 @@ private struct JobHighlightsCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Highlights")
+            Text(AppConstants.Text.highlights)
                 .font(.headline)
 
             VStack(spacing: 12) {
-                JobDetailMetricRow(title: "Location", value: job.location, systemImage: "mappin.and.ellipse")
-                JobDetailMetricRow(title: "Salary Range", value: job.salaryRange, systemImage: "banknote")
+                JobDetailMetricRow(title: AppConstants.Text.location, value: job.location, systemImage: AppConstants.Icons.location)
+                JobDetailMetricRow(title: AppConstants.Text.salaryRange, value: job.salaryRange, systemImage: AppConstants.Icons.salary)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(20)
-        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
+        .padding(AppConstants.Layout.detailCardPadding)
+        .background(.thinMaterial, in: RoundedRectangle(cornerRadius: AppConstants.Layout.detailCardCornerRadius, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
+            RoundedRectangle(cornerRadius: AppConstants.Layout.detailCardCornerRadius, style: .continuous)
                 .stroke(.secondary.opacity(0.15), lineWidth: 1)
         )
-        .accessibilityIdentifier("job-highlights-card")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobHighlightsCard)
     }
 }
 
@@ -128,7 +136,7 @@ private struct JobDetailMetricRow: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image(systemName: systemImage)
-                .frame(width: 24)
+                .frame(width: AppConstants.Layout.locationRowWidth)
                 .foregroundStyle(.primary.opacity(0.8))
 
             VStack(alignment: .leading, spacing: 2) {
@@ -141,6 +149,6 @@ private struct JobDetailMetricRow: View {
 
             Spacer(minLength: 0)
         }
-        .accessibilityIdentifier("job-detail-metric-\(title.lowercased().replacingOccurrences(of: " ", with: "-"))")
+        .accessibilityIdentifier(AppConstants.Accessibility.jobDetailMetric(title))
     }
 }

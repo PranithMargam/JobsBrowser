@@ -30,6 +30,12 @@ final class JobsListViewModel: ObservableObject {
         self.repository = repository
     }
 
+    init(repository: JobRepository, preloadedJobs: [Job]) {
+        self.repository = repository
+        self.allJobs = preloadedJobs
+        self.state = .content(Self.groupJobs(preloadedJobs))
+    }
+
     func loadJobs() async {
         state = .loading
 
@@ -51,18 +57,18 @@ final class JobsListViewModel: ObservableObject {
 
         if filteredJobs.isEmpty {
             if allJobs.isEmpty {
-                state = .empty(message: "No jobs are available right now.")
+                state = .empty(message: AppConstants.Text.noJobsAvailable)
             } else if normalizedQuery.isEmpty {
-                state = .empty(message: "No jobs are available right now.")
+                state = .empty(message: AppConstants.Text.noJobsAvailable)
             } else {
-                state = .empty(message: "No jobs match \"\(searchQuery)\".")
+                state = .empty(message: AppConstants.Text.noJobsMatch(searchQuery))
             }
         } else {
             state = .content(Self.groupJobs(filteredJobs))
         }
     }
 
-    private static func groupJobs(_ jobs: [Job]) -> [Section] {
+    static func groupJobs(_ jobs: [Job]) -> [Section] {
         Job.Category.allCases.compactMap { category in
             let categoryJobs = jobs.filter { $0.category == category }
             return categoryJobs.isEmpty ? nil : Section(category: category, jobs: categoryJobs)
