@@ -33,13 +33,12 @@ struct JobCardView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.85)
 
-                HStack(spacing: 8) {
-                    JobPill(text: job.category.title)
-                    if isSaved {
+                if isSaved {
+                    HStack(spacing: 8) {
                         JobPill(text: AppConstants.Text.saved)
                     }
+                    .padding(.top, 2)
                 }
-                .padding(.top, 2)
             }
             .padding(AppConstants.Layout.jobCardPadding)
             .frame(maxWidth: .infinity, alignment: .leading)
