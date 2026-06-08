@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02DDD99051787E1AC8BCEE56 /* 20x20@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF86423B5BFFFC0206E0C034 /* 20x20@1x.png */; };
+		07BCCAD8448714DD46AD5231 /* JobsStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EE91F544E558EBAF81F8D5 /* JobsStateView.swift */; };
+		097DD2B6B6EB06BF187FB5EA /* 20x20@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 601F45B8704F8260F182A118 /* 20x20@2x~ipad.png */; };
+		11E3F3F70DBDDE422817EA27 /* JobsBrowserApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267432C52AD9DC3299CA2FD /* JobsBrowserApp.swift */; };
+		1AE3A0AB856839AE970CC72F /* JobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C0D976767F0C07CF6240DB /* JobRepository.swift */; };
+		1DC26702107B9C450A9F132E /* 29x29@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 26ED00BDD03F7160572377FA /* 29x29@2x~ipad.png */; };
+		1DFB22E6B3073F00AA6F572B /* JobCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925913F1D565E0C9C028AEEC /* JobCardView.swift */; };
+		266C19BB1DB1B5931EB1212D /* AppIcon1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CEE8E3F16E2E95CD8D04DDE /* AppIcon1024x1024.png */; };
+		2C9A630827128F5D39984E33 /* jobs.json in Resources */ = {isa = PBXBuildFile; fileRef = C25A1838E11BE91B319E2AA1 /* jobs.json */; };
+		372AA03AF8A9EC8E541B8A63 /* AppIcon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC092DA39D9620D8BB35671 /* AppIcon-1024.png */; };
+		4295FF821E4A803CAC7785F0 /* 40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B9964E50D1E90C3D53EE5B /* 40x40@1x.png */; };
+		42B19ADF0FACDEFFFDACC695 /* 1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 038CE21B5183C99EDD4D1618 /* 1024x1024.png */; };
+		52AF5C4180AC6B3AF5235895 /* AppIcon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 751A084746942345F0142E52 /* AppIcon76x76@2x~ipad.png */; };
+		5B9C79D7591370246C6D7A8E /* 29x29@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F32565E7EAEB2A0034ECC4 /* 29x29@3x.png */; };
+		5F09CC30993C8F653A91AAFE /* 29x29@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CA50F189F67DA527AEE81F9 /* 29x29@1x.png */; };
+		6A6E7921AD1EC466425D52E1 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F815ACAABE4DB34581104F6 /* JobDetailView.swift */; };
+		6CD8350C5E8161A4955A3FCD /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = BA08B87E402F444E7459A5E1 /* Contents.json */; };
+		714AB8484CC7DB52A0DC8BE6 /* JobRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56FC59C728FE611988618C3F /* JobRepositoryTests.swift */; };
+		775AAE5AFCE84DD7EB41F297 /* JobsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD8722B6FAF81C308EEFD4A /* JobsListViewModel.swift */; };
+		7B2E499BF9C9B930B8B20063 /* 40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD76A32782BB0E4713B687E6 /* 40x40@2x.png */; };
+		7D9286E619A70A2BC31EA7A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1104B1E47C684B7C77BC802B /* LaunchScreen.storyboard */; };
+		7E097E0B9DB960F4794348A0 /* 76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3973415BC5B44DFC2B815160 /* 76x76@2x.png */; };
+		8463304679918AD845BEFCA1 /* JobsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2A225672C42E9344ADDEC5 /* JobsListViewModelTests.swift */; };
+		8945633A7CC5E9A7970448CB /* 76x76@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3BB8E23184206B15789B9AF /* 76x76@1x.png */; };
+		9D27613D57B2D0FE07CD4446 /* 60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BB30367FFCA9E5887E2585 /* 60x60@2x.png */; };
+		A03B57A159D67772E4A83E61 /* JobsActivityStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E588E43BECF30D1A3705A3 /* JobsActivityStoreTests.swift */; };
+		A27380920F738923008BB069 /* AppIcon83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 459F78273E1E79859AFBA3C6 /* AppIcon83.5x83.5@2x.png */; };
+		A5A6AB28583ADA014A574410 /* AppIcon60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AF33EAD5DD284E8EB702C1 /* AppIcon60x60@3x.png */; };
+		C0ADB223B455B5F66991EA47 /* JobsBrowserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BC5181137E9D6A60C9BEAC /* JobsBrowserUITests.swift */; };
+		C3124E400C726BE704953A58 /* 60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BF80E80696228DF9E70F7BA8 /* 60x60@3x.png */; };
+		C7CF67B79D96EC10AAC5DE40 /* 83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7D714AECB2F41204D753EEF /* 83.5x83.5@2x.png */; };
+		C8838DFD5B51FF7AAC64A48E /* 20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 28648688D83EF4DF5D653D62 /* 20x20@3x.png */; };
+		D2F5405E4C285C42867B7527 /* JobsRootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D736C3198191F9DFADA20F0C /* JobsRootTabView.swift */; };
+		D46C35AB2ADFB6FB7A48F62A /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4D15F01A0B1B3D3751453C /* AppIcon60x60@2x.png */; };
+		D782BA507217FBA0BA4E4C57 /* 40x40@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AA4702B2807B9C15381B6EF3 /* 40x40@2x~ipad.png */; };
+		DED1E5EFC6F133B0B350AE40 /* 29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18802E032C3EE469A811881B /* 29x29@2x.png */; };
+		E1700A206CDF893822F8156F /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62715F4B59608A9F624BB9 /* Job.swift */; };
+		E4BBDBA7FA0D1195C3902372 /* jobs.json in Resources */ = {isa = PBXBuildFile; fileRef = 17B6226E4F705B55774DCE6F /* jobs.json */; };
+		E5233C935C7845B9C2A8D022 /* LaunchLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD914C91697269D4466BBA5 /* LaunchLogo.png */; };
+		E716024A5D4CAB8CCDBD5A67 /* 40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0CD34721D12AC3B23167B3B /* 40x40@3x.png */; };
+		E7F0E99906EE929EE30F1FF6 /* JobsActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD50B0A1FEE7332251BD6A4E /* JobsActivityStore.swift */; };
+		EA02BCBB0E1B38A8B927C2F9 /* 20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB14B50DAE6B968DF4E1D75 /* 20x20@2x.png */; };
+		F6F4AC106DC5D353586A5FBE /* JobsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EBFF01957EDE19EC8B5D9AB /* JobsListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		28CECCD0C6172E56F31DDC36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 249C84D2CF4CB7DE5547E901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01FAB3F46D1E15CB4BAB4D1;
+			remoteInfo = JobsBrowser;
+		};
+		42829CCD605BBC8BADC03BC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 249C84D2CF4CB7DE5547E901 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E01FAB3F46D1E15CB4BAB4D1;
+			remoteInfo = JobsBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		038CE21B5183C99EDD4D1618 /* 1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024x1024.png; sourceTree = "<group>"; };
+		04ECDD07E48A618F7BC79D53 /* JobsBrowser.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = JobsBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CD8722B6FAF81C308EEFD4A /* JobsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListViewModel.swift; sourceTree = "<group>"; };
+		1104B1E47C684B7C77BC802B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		13365F5084C61C5AAE2E96A8 /* JobsBrowserUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = JobsBrowserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17B6226E4F705B55774DCE6F /* jobs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jobs.json; sourceTree = "<group>"; };
+		18802E032C3EE469A811881B /* 29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29x29@2x.png"; sourceTree = "<group>"; };
+		1CA50F189F67DA527AEE81F9 /* 29x29@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29x29@1x.png"; sourceTree = "<group>"; };
+		1CEE8E3F16E2E95CD8D04DDE /* AppIcon1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon1024x1024.png; sourceTree = "<group>"; };
+		26ED00BDD03F7160572377FA /* 29x29@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29x29@2x~ipad.png"; sourceTree = "<group>"; };
+		28648688D83EF4DF5D653D62 /* 20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20x20@3x.png"; sourceTree = "<group>"; };
+		2AB14B50DAE6B968DF4E1D75 /* 20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20x20@2x.png"; sourceTree = "<group>"; };
+		31FA90F355B8B6527D72DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3973415BC5B44DFC2B815160 /* 76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76x76@2x.png"; sourceTree = "<group>"; };
+		40BC5181137E9D6A60C9BEAC /* JobsBrowserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsBrowserUITests.swift; sourceTree = "<group>"; };
+		4267432C52AD9DC3299CA2FD /* JobsBrowserApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsBrowserApp.swift; sourceTree = "<group>"; };
+		459F78273E1E79859AFBA3C6 /* AppIcon83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		56FC59C728FE611988618C3F /* JobRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRepositoryTests.swift; sourceTree = "<group>"; };
+		5E2A225672C42E9344ADDEC5 /* JobsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListViewModelTests.swift; sourceTree = "<group>"; };
+		5F815ACAABE4DB34581104F6 /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		601F45B8704F8260F182A118 /* 20x20@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20x20@2x~ipad.png"; sourceTree = "<group>"; };
+		62E588E43BECF30D1A3705A3 /* JobsActivityStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsActivityStoreTests.swift; sourceTree = "<group>"; };
+		72B9964E50D1E90C3D53EE5B /* 40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40x40@1x.png"; sourceTree = "<group>"; };
+		751A084746942345F0142E52 /* AppIcon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x~ipad.png"; sourceTree = "<group>"; };
+		7792E3AB5744E944C3718CF3 /* JobsBrowserTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = JobsBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78BB30367FFCA9E5887E2585 /* 60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60x60@2x.png"; sourceTree = "<group>"; };
+		7CD914C91697269D4466BBA5 /* LaunchLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchLogo.png; sourceTree = "<group>"; };
+		8B62715F4B59608A9F624BB9 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		8F4D15F01A0B1B3D3751453C /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		925913F1D565E0C9C028AEEC /* JobCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCardView.swift; sourceTree = "<group>"; };
+		93F32565E7EAEB2A0034ECC4 /* 29x29@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "29x29@3x.png"; sourceTree = "<group>"; };
+		9EBFF01957EDE19EC8B5D9AB /* JobsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsListView.swift; sourceTree = "<group>"; };
+		A0CD34721D12AC3B23167B3B /* 40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40x40@3x.png"; sourceTree = "<group>"; };
+		A1EE91F544E558EBAF81F8D5 /* JobsStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsStateView.swift; sourceTree = "<group>"; };
+		A9AF33EAD5DD284E8EB702C1 /* AppIcon60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@3x.png"; sourceTree = "<group>"; };
+		AA4702B2807B9C15381B6EF3 /* 40x40@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40x40@2x~ipad.png"; sourceTree = "<group>"; };
+		BA08B87E402F444E7459A5E1 /* Contents.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		BD76A32782BB0E4713B687E6 /* 40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "40x40@2x.png"; sourceTree = "<group>"; };
+		BF80E80696228DF9E70F7BA8 /* 60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60x60@3x.png"; sourceTree = "<group>"; };
+		C25A1838E11BE91B319E2AA1 /* jobs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jobs.json; sourceTree = "<group>"; };
+		C7D714AECB2F41204D753EEF /* 83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		CD50B0A1FEE7332251BD6A4E /* JobsActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsActivityStore.swift; sourceTree = "<group>"; };
+		D3BB8E23184206B15789B9AF /* 76x76@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "76x76@1x.png"; sourceTree = "<group>"; };
+		D736C3198191F9DFADA20F0C /* JobsRootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsRootTabView.swift; sourceTree = "<group>"; };
+		D8C0D976767F0C07CF6240DB /* JobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRepository.swift; sourceTree = "<group>"; };
+		DDC092DA39D9620D8BB35671 /* AppIcon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-1024.png"; sourceTree = "<group>"; };
+		FF86423B5BFFFC0206E0C034 /* 20x20@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20x20@1x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02C6B95467458939B5E4D724 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04ECDD07E48A618F7BC79D53 /* JobsBrowser.app */,
+				7792E3AB5744E944C3718CF3 /* JobsBrowserTests.xctest */,
+				13365F5084C61C5AAE2E96A8 /* JobsBrowserUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11B278036BB4E8ED5D95BBB6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0CD8722B6FAF81C308EEFD4A /* JobsListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		133E4004ABF0DDF711476074 /* JobsBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				4267432C52AD9DC3299CA2FD /* JobsBrowserApp.swift */,
+				66C7E8F4D40E7A38B8C2F18F /* Components */,
+				6BC1C026E49317DACF131C57 /* Models */,
+				AC9816A913639EDB030940FF /* Resources */,
+				8423BDF6F4524EBC3D01B725 /* Services */,
+				11B278036BB4E8ED5D95BBB6 /* ViewModels */,
+				77EDE7ED4EAD58EABAB1621F /* Views */,
+			);
+			name = JobsBrowser;
+			path = Sources/JobsBrowser;
+			sourceTree = "<group>";
+		};
+		23BF7AF7F3EB73900BEAF2B0 /* JobsBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				56FC59C728FE611988618C3F /* JobRepositoryTests.swift */,
+				62E588E43BECF30D1A3705A3 /* JobsActivityStoreTests.swift */,
+				5E2A225672C42E9344ADDEC5 /* JobsListViewModelTests.swift */,
+				8E07111662BE7C6081E5C0FC /* Resources */,
+			);
+			name = JobsBrowserTests;
+			path = Tests/JobsBrowserTests;
+			sourceTree = "<group>";
+		};
+		66C7E8F4D40E7A38B8C2F18F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				925913F1D565E0C9C028AEEC /* JobCardView.swift */,
+				A1EE91F544E558EBAF81F8D5 /* JobsStateView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6BC1C026E49317DACF131C57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B62715F4B59608A9F624BB9 /* Job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6BE0C115283949AF5C486872 /* JobsBrowserUITests */ = {
+			isa = PBXGroup;
+			children = (
+				40BC5181137E9D6A60C9BEAC /* JobsBrowserUITests.swift */,
+			);
+			name = JobsBrowserUITests;
+			path = Tests/JobsBrowserUITests;
+			sourceTree = "<group>";
+		};
+		77EDE7ED4EAD58EABAB1621F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5F815ACAABE4DB34581104F6 /* JobDetailView.swift */,
+				9EBFF01957EDE19EC8B5D9AB /* JobsListView.swift */,
+				D736C3198191F9DFADA20F0C /* JobsRootTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8423BDF6F4524EBC3D01B725 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D8C0D976767F0C07CF6240DB /* JobRepository.swift */,
+				CD50B0A1FEE7332251BD6A4E /* JobsActivityStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8E07111662BE7C6081E5C0FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				17B6226E4F705B55774DCE6F /* jobs.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC9816A913639EDB030940FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF86423B5BFFFC0206E0C034 /* 20x20@1x.png */,
+				2AB14B50DAE6B968DF4E1D75 /* 20x20@2x.png */,
+				601F45B8704F8260F182A118 /* 20x20@2x~ipad.png */,
+				28648688D83EF4DF5D653D62 /* 20x20@3x.png */,
+				1CA50F189F67DA527AEE81F9 /* 29x29@1x.png */,
+				18802E032C3EE469A811881B /* 29x29@2x.png */,
+				26ED00BDD03F7160572377FA /* 29x29@2x~ipad.png */,
+				93F32565E7EAEB2A0034ECC4 /* 29x29@3x.png */,
+				72B9964E50D1E90C3D53EE5B /* 40x40@1x.png */,
+				BD76A32782BB0E4713B687E6 /* 40x40@2x.png */,
+				AA4702B2807B9C15381B6EF3 /* 40x40@2x~ipad.png */,
+				A0CD34721D12AC3B23167B3B /* 40x40@3x.png */,
+				78BB30367FFCA9E5887E2585 /* 60x60@2x.png */,
+				BF80E80696228DF9E70F7BA8 /* 60x60@3x.png */,
+				D3BB8E23184206B15789B9AF /* 76x76@1x.png */,
+				3973415BC5B44DFC2B815160 /* 76x76@2x.png */,
+				C7D714AECB2F41204D753EEF /* 83.5x83.5@2x.png */,
+				038CE21B5183C99EDD4D1618 /* 1024x1024.png */,
+				DDC092DA39D9620D8BB35671 /* AppIcon-1024.png */,
+				8F4D15F01A0B1B3D3751453C /* AppIcon60x60@2x.png */,
+				A9AF33EAD5DD284E8EB702C1 /* AppIcon60x60@3x.png */,
+				751A084746942345F0142E52 /* AppIcon76x76@2x~ipad.png */,
+				459F78273E1E79859AFBA3C6 /* AppIcon83.5x83.5@2x.png */,
+				1CEE8E3F16E2E95CD8D04DDE /* AppIcon1024x1024.png */,
+				BA08B87E402F444E7459A5E1 /* Contents.json */,
+				31FA90F355B8B6527D72DBF4 /* Info.plist */,
+				C25A1838E11BE91B319E2AA1 /* jobs.json */,
+				7CD914C91697269D4466BBA5 /* LaunchLogo.png */,
+				1104B1E47C684B7C77BC802B /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E4E88314B67D0DED2ECCE7BF = {
+			isa = PBXGroup;
+			children = (
+				133E4004ABF0DDF711476074 /* JobsBrowser */,
+				23BF7AF7F3EB73900BEAF2B0 /* JobsBrowserTests */,
+				6BE0C115283949AF5C486872 /* JobsBrowserUITests */,
+				02C6B95467458939B5E4D724 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEC3E010EE01EE667AA17384 /* JobsBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 488BFD08EDAD433C9FE0816C /* Build configuration list for PBXNativeTarget "JobsBrowserTests" */;
+			buildPhases = (
+				631A0B123176C949E7E3D667 /* Sources */,
+				63E7AB1BE6E2557D04389E3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CF407C22E4079EDA0747929 /* PBXTargetDependency */,
+			);
+			name = JobsBrowserTests;
+			productName = JobsBrowserTests;
+			productReference = 7792E3AB5744E944C3718CF3 /* JobsBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DFFD9DA80659CB1D2A1DB586 /* JobsBrowserUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A498404F82613064E12BA0A /* Build configuration list for PBXNativeTarget "JobsBrowserUITests" */;
+			buildPhases = (
+				B925BEB23D2EEEAAE67CE966 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D6FEBB446ACB0CD24050D5CC /* PBXTargetDependency */,
+			);
+			name = JobsBrowserUITests;
+			productName = JobsBrowserUITests;
+			productReference = 13365F5084C61C5AAE2E96A8 /* JobsBrowserUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		E01FAB3F46D1E15CB4BAB4D1 /* JobsBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92058129AEDCC261CC5CE8C2 /* Build configuration list for PBXNativeTarget "JobsBrowser" */;
+			buildPhases = (
+				8019BB7624A724FED64C4115 /* Sources */,
+				030E03ED75ACFFA7EFAE3BAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobsBrowser;
+			productName = JobsBrowser;
+			productReference = 04ECDD07E48A618F7BC79D53 /* JobsBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		249C84D2CF4CB7DE5547E901 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CEC3E010EE01EE667AA17384 = {
+						DevelopmentTeam = "";
+					};
+					DFFD9DA80659CB1D2A1DB586 = {
+						DevelopmentTeam = "";
+						TestTargetID = E01FAB3F46D1E15CB4BAB4D1;
+					};
+					E01FAB3F46D1E15CB4BAB4D1 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 0101DC8430D69DD986FD85F3 /* Build configuration list for PBXProject "JobsBrowser" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E4E88314B67D0DED2ECCE7BF;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E01FAB3F46D1E15CB4BAB4D1 /* JobsBrowser */,
+				CEC3E010EE01EE667AA17384 /* JobsBrowserTests */,
+				DFFD9DA80659CB1D2A1DB586 /* JobsBrowserUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		030E03ED75ACFFA7EFAE3BAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B19ADF0FACDEFFFDACC695 /* 1024x1024.png in Resources */,
+				02DDD99051787E1AC8BCEE56 /* 20x20@1x.png in Resources */,
+				EA02BCBB0E1B38A8B927C2F9 /* 20x20@2x.png in Resources */,
+				097DD2B6B6EB06BF187FB5EA /* 20x20@2x~ipad.png in Resources */,
+				C8838DFD5B51FF7AAC64A48E /* 20x20@3x.png in Resources */,
+				5F09CC30993C8F653A91AAFE /* 29x29@1x.png in Resources */,
+				DED1E5EFC6F133B0B350AE40 /* 29x29@2x.png in Resources */,
+				1DC26702107B9C450A9F132E /* 29x29@2x~ipad.png in Resources */,
+				5B9C79D7591370246C6D7A8E /* 29x29@3x.png in Resources */,
+				4295FF821E4A803CAC7785F0 /* 40x40@1x.png in Resources */,
+				7B2E499BF9C9B930B8B20063 /* 40x40@2x.png in Resources */,
+				D782BA507217FBA0BA4E4C57 /* 40x40@2x~ipad.png in Resources */,
+				E716024A5D4CAB8CCDBD5A67 /* 40x40@3x.png in Resources */,
+				9D27613D57B2D0FE07CD4446 /* 60x60@2x.png in Resources */,
+				C3124E400C726BE704953A58 /* 60x60@3x.png in Resources */,
+				8945633A7CC5E9A7970448CB /* 76x76@1x.png in Resources */,
+				7E097E0B9DB960F4794348A0 /* 76x76@2x.png in Resources */,
+				C7CF67B79D96EC10AAC5DE40 /* 83.5x83.5@2x.png in Resources */,
+				372AA03AF8A9EC8E541B8A63 /* AppIcon-1024.png in Resources */,
+				266C19BB1DB1B5931EB1212D /* AppIcon1024x1024.png in Resources */,
+				D46C35AB2ADFB6FB7A48F62A /* AppIcon60x60@2x.png in Resources */,
+				A5A6AB28583ADA014A574410 /* AppIcon60x60@3x.png in Resources */,
+				52AF5C4180AC6B3AF5235895 /* AppIcon76x76@2x~ipad.png in Resources */,
+				A27380920F738923008BB069 /* AppIcon83.5x83.5@2x.png in Resources */,
+				6CD8350C5E8161A4955A3FCD /* Contents.json in Resources */,
+				E5233C935C7845B9C2A8D022 /* LaunchLogo.png in Resources */,
+				7D9286E619A70A2BC31EA7A6 /* LaunchScreen.storyboard in Resources */,
+				2C9A630827128F5D39984E33 /* jobs.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E7AB1BE6E2557D04389E3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4BBDBA7FA0D1195C3902372 /* jobs.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		631A0B123176C949E7E3D667 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				714AB8484CC7DB52A0DC8BE6 /* JobRepositoryTests.swift in Sources */,
+				A03B57A159D67772E4A83E61 /* JobsActivityStoreTests.swift in Sources */,
+				8463304679918AD845BEFCA1 /* JobsListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8019BB7624A724FED64C4115 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1700A206CDF893822F8156F /* Job.swift in Sources */,
+				1DFB22E6B3073F00AA6F572B /* JobCardView.swift in Sources */,
+				6A6E7921AD1EC466425D52E1 /* JobDetailView.swift in Sources */,
+				1AE3A0AB856839AE970CC72F /* JobRepository.swift in Sources */,
+				E7F0E99906EE929EE30F1FF6 /* JobsActivityStore.swift in Sources */,
+				11E3F3F70DBDDE422817EA27 /* JobsBrowserApp.swift in Sources */,
+				F6F4AC106DC5D353586A5FBE /* JobsListView.swift in Sources */,
+				775AAE5AFCE84DD7EB41F297 /* JobsListViewModel.swift in Sources */,
+				D2F5405E4C285C42867B7527 /* JobsRootTabView.swift in Sources */,
+				07BCCAD8448714DD46AD5231 /* JobsStateView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B925BEB23D2EEEAAE67CE966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0ADB223B455B5F66991EA47 /* JobsBrowserUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9CF407C22E4079EDA0747929 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01FAB3F46D1E15CB4BAB4D1 /* JobsBrowser */;
+			targetProxy = 28CECCD0C6172E56F31DDC36 /* PBXContainerItemProxy */;
+		};
+		D6FEBB446ACB0CD24050D5CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E01FAB3F46D1E15CB4BAB4D1 /* JobsBrowser */;
+			targetProxy = 42829CCD605BBC8BADC03BC5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1AEB2E9DCE2AA89DFCB52AC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/JobsBrowser/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.jobsbrowser;
+				PRODUCT_NAME = JobsBrowser;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F52B1B3DA9E13DD375267B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.jobsbrowser.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JobsBrowser;
+			};
+			name = Debug;
+		};
+		59CDA8038CD544F31A65180D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.jobsbrowser.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobsBrowser.app/JobsBrowser";
+			};
+			name = Release;
+		};
+		6706363867AA63D823B9290E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		74A5072694335B0C1E90CF74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7C4C5A8A8229E2AA9A372779 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.jobsbrowser.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JobsBrowser;
+			};
+			name = Release;
+		};
+		80DC476D63CC361F10E95105 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.jobsbrowser.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobsBrowser.app/JobsBrowser";
+			};
+			name = Debug;
+		};
+		D7FD4F3C4AECF49EF174FDF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Sources/JobsBrowser/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.jobsbrowser;
+				PRODUCT_NAME = JobsBrowser;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0101DC8430D69DD986FD85F3 /* Build configuration list for PBXProject "JobsBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74A5072694335B0C1E90CF74 /* Debug */,
+				6706363867AA63D823B9290E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		488BFD08EDAD433C9FE0816C /* Build configuration list for PBXNativeTarget "JobsBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80DC476D63CC361F10E95105 /* Debug */,
+				59CDA8038CD544F31A65180D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5A498404F82613064E12BA0A /* Build configuration list for PBXNativeTarget "JobsBrowserUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F52B1B3DA9E13DD375267B7 /* Debug */,
+				7C4C5A8A8229E2AA9A372779 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		92058129AEDCC261CC5CE8C2 /* Build configuration list for PBXNativeTarget "JobsBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AEB2E9DCE2AA89DFCB52AC3 /* Debug */,
+				D7FD4F3C4AECF49EF174FDF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 249C84D2CF4CB7DE5547E901 /* Project object */;
+}

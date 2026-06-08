@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ios-senior-001",
+    "title": "Senior iOS Engineer",
+    "companyName": "Northstar Health",
+    "location": "San Francisco, CA",
+    "salaryRange": "$160k - $200k",
+    "description": "Lead the architecture and delivery of patient-facing iOS experiences used by thousands of healthcare professionals and consumers. You will partner closely with product, design, and backend teams to ship reliable, accessible, and fast features.",
+    "companyInformation": "Northstar Health builds software that helps care teams coordinate, communicate, and deliver better outcomes. The team values clean architecture, high craftsmanship, and a strong bias for shipping.",
+    "category": "profile",
+    "skills": ["Swift", "SwiftUI", "Concurrency"]
+  },
+  {
+    "id": "mobile-product-002",
+    "title": "iOS Product Engineer",
+    "companyName": "Trailblaze",
+    "location": "New York, NY",
+    "salaryRange": "$145k - $180k",
+    "description": "Join a product-focused team building consumer software with delightful onboarding, strong retention loops, and a polished mobile experience.",
+    "companyInformation": "Trailblaze helps small businesses manage customer engagement through modern mobile and web products. The company is remote-friendly with a collaborative design culture.",
+    "category": "profile",
+    "skills": ["UIKit", "MVVM", "Testing"]
+  },
+  {
+    "id": "platform-003",
+    "title": "Mobile Platform Engineer",
+    "companyName": "Orbit Commerce",
+    "location": "Austin, TX",
+    "salaryRange": "$155k - $195k",
+    "description": "Own shared infrastructure that enables multiple mobile squads to move quickly with quality. This includes build tooling, reusable design patterns, and foundational app services.",
+    "companyInformation": "Orbit Commerce is a growing marketplace platform focused on making online purchasing simpler for independent brands and customers.",
+    "category": "recent",
+    "skills": ["Architecture", "CI/CD", "Modularization"]
+  },
+  {
+    "id": "startup-004",
+    "title": "Lead iOS Developer",
+    "companyName": "Aster Labs",
+    "location": "Seattle, WA",
+    "salaryRange": "$170k - $215k",
+    "description": "Drive technical decisions for a fast-moving startup and shape the product experience from concept to release. You will mentor engineers and set the bar for mobile quality.",
+    "companyInformation": "Aster Labs is building workflow software for creative teams. The company prizes autonomy, sharp execution, and thoughtful product details.",
+    "category": "recent",
+    "skills": ["Leadership", "SwiftUI", "Mentorship"]
+  },
+  {
+    "id": "consumer-005",
+    "title": "iOS Engineer",
+    "companyName": "Lumen Fit",
+    "location": "Remote",
+    "salaryRange": "$135k - $170k",
+    "description": "Build fitness experiences that motivate people to stay active. You will work on engaging flows, notifications, and performance-sensitive screens.",
+    "companyInformation": "Lumen Fit creates consumer wellness experiences with a strong emphasis on habit formation, graceful motion, and intuitive interfaces.",
+    "category": "explore",
+    "skills": ["Animations", "Performance", "Accessibility"]
+  },
+  {
+    "id": "fintech-006",
+    "title": "Senior Mobile Engineer",
+    "companyName": "Harbor Finance",
+    "location": "Chicago, IL",
+    "salaryRange": "$165k - $205k",
+    "description": "Develop secure mobile banking features with strong attention to reliability, compliance, and user trust. You will help evolve the app architecture and improve engineering velocity.",
+    "companyInformation": "Harbor Finance provides modern financial products for small teams and individuals. Security, clarity, and user confidence are core product values.",
+    "category": "explore",
+    "skills": ["Security", "Reliability", "Async/Await"]
+  }
+]
