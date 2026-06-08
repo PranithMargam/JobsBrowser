@@ -1,12 +1,12 @@
 # JobsBrowser
 
-JobsBrowser is a production-oriented iOS job browsing app built for an interview-style assessment. The app focuses on a scalable, maintainable, and testable implementation for browsing jobs, searching by title or company, viewing job details, and managing saved jobs.
+JobsBrowser is a job browsing app. The app focuses on a scalable, maintainable, and testable implementation for browsing jobs, searching by title or company, viewing job details, and managing saved jobs.
 
 ## Setup Instructions
 
 ### Prerequisites
 
-- macOS with the latest stable Xcode that supports Swift 5+
+- macOS with the latest stable Xcode(16.x) that supports Swift 5+
 - iOS Simulator or a physical iPhone for testing
 - Git installed for source control
 
